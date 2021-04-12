@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.matthewxu.tacocloud.model.Ingredient;
+import com.matthewxu.tacocloud.model.Taco;
 import com.matthewxu.tacocloud.model.Ingredient.Type;
 
 /**
@@ -39,7 +40,7 @@ public class TacoDesignController {
 		for (Type type : types) {
 			model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
 		}
-		//model.addAttribute("design", new Taco);
+		model.addAttribute("design", new Taco());
 		return "design";
 		
 	}
