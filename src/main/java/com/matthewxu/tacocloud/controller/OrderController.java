@@ -15,7 +15,7 @@ import com.matthewxu.tacocloud.model.Order;
  * @date Apr 13, 2021
  */
 @Controller
-@RequestMapping
+@RequestMapping("/orders")
 public class OrderController {
 
 	@GetMapping("/current")
