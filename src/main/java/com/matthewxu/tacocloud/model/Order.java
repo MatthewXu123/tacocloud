@@ -20,7 +20,7 @@ public class Order {
 	
 	private String ccNumber;
 	
-	private String ccException;
+	private String ccExpiration;
 	
 	private String ccCVV;
 
@@ -72,12 +72,12 @@ public class Order {
 		this.ccNumber = ccNumber;
 	}
 
-	public String getCcException() {
-		return ccException;
+	public String getCcExpiration() {
+		return ccExpiration;
 	}
 
-	public void setCcException(String ccException) {
-		this.ccException = ccException;
+	public void setCcExpiration(String ccExpiration) {
+		this.ccExpiration = ccExpiration;
 	}
 
 	public String getCcCVV() {
