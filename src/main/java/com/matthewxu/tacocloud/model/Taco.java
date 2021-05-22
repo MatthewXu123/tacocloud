@@ -3,6 +3,9 @@ package com.matthewxu.tacocloud.model;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * Description:
  * @author Matthew Xu
@@ -10,6 +13,8 @@ import java.util.List;
  */
 public class Taco {
 
+	@NotNull
+	@Size(min = 5, message = "The length > 5")
 	private String name;
 	
 	private List<String> ingredients;

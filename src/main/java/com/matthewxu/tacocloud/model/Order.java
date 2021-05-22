@@ -1,6 +1,8 @@
 
 package com.matthewxu.tacocloud.model;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * Description:
  * @author Matthew Xu
@@ -8,8 +10,10 @@ package com.matthewxu.tacocloud.model;
  */
 public class Order {
 
+	@NotBlank(message = "Name is required.")
 	private String name;
 	
+	@NotBlank(message = "Street is required.")
 	private String street;
 	
 	private String city;
