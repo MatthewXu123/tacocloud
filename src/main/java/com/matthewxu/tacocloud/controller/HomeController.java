@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Matthew Xu
  * @date Feb 26, 2021
  */
-@Controller
-@RequestMapping("/")
+//@Controller
+//@RequestMapping("/")
 public class HomeController {
 
 	@GetMapping

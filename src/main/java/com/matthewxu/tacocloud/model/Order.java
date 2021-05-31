@@ -13,7 +13,6 @@ public class Order {
 	@NotBlank(message = "Name is required.")
 	private String name;
 	
-	@NotBlank(message = "Street is required.")
 	private String street;
 	
 	private String city;
@@ -22,6 +21,7 @@ public class Order {
 	
 	private String zip;
 	
+	@NotBlank(message = "ccNumber is required.")
 	private String ccNumber;
 	
 	private String ccExpiration;
@@ -91,6 +91,8 @@ public class Order {
 	public void setCcCVV(String ccCVV) {
 		this.ccCVV = ccCVV;
 	}
+	
+	 
 	
 	
 }
