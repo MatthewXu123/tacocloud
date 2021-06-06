@@ -1,6 +1,8 @@
 
 package com.matthewxu.tacocloud.model;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 
 /**
@@ -10,6 +12,10 @@ import javax.validation.constraints.NotBlank;
  */
 public class Order {
 
+	private long id;
+	
+	private Date placedAt;
+	
 	@NotBlank(message = "Name is required.")
 	private String name;
 	
@@ -91,8 +97,21 @@ public class Order {
 	public void setCcCVV(String ccCVV) {
 		this.ccCVV = ccCVV;
 	}
-	
-	 
-	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Date getPlacedAt() {
+		return placedAt;
+	}
+
+	public void setPlacedAt(Date placedAt) {
+		this.placedAt = placedAt;
+	}
 	
 }

@@ -1,6 +1,7 @@
 
 package com.matthewxu.tacocloud.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
@@ -13,6 +14,10 @@ import javax.validation.constraints.Size;
  */
 public class Taco {
 
+	private long id;
+	
+	private Date createdAt;
+	
 	@NotNull
 	@Size(min = 5, message = "The length > 5")
 	private String name;
@@ -33,6 +38,22 @@ public class Taco {
 
 	public void setIngredients(List<String> ingredients) {
 		this.ingredients = ingredients;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 	
 	
