@@ -1,4 +1,4 @@
-package com.matthewxu.tacocloud.dao;
+package com.matthewxu.tacocloud.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.matthewxu.tacocloud.dao.IngredientRepository;
 import com.matthewxu.tacocloud.model.Ingredient;
 
 @Repository
