@@ -22,7 +22,7 @@ public class Taco {
 	@Size(min = 5, message = "The length > 5")
 	private String name;
 	
-	private List<String> ingredients;
+	private List<Ingredient> ingredients;
 
 	public String getName() {
 		return name;
@@ -32,11 +32,11 @@ public class Taco {
 		this.name = name;
 	}
 
-	public List<String> getIngredients() {
+	public List<Ingredient> getIngredients() {
 		return ingredients;
 	}
 
-	public void setIngredients(List<String> ingredients) {
+	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
 
