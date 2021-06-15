@@ -13,13 +13,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.matthewxu.tacocloud.dao.IngredientRepository;
+import com.matthewxu.tacocloud.dao.TacoRepository;
 import com.matthewxu.tacocloud.model.Ingredient;
 import com.matthewxu.tacocloud.model.Ingredient.Type;
+import com.matthewxu.tacocloud.model.Order;
 import com.matthewxu.tacocloud.model.Taco;
 
 /**
@@ -34,7 +37,20 @@ public class TacoDesignController {
 	
 	@Autowired
 	private IngredientRepository ingredientRepository;
+	
+	@Autowired
+	private TacoRepository tacoRepository;
 
+	@ModelAttribute(name = "order")
+	public Order order(){
+		return new Order();
+	}
+	
+	@ModelAttribute(name = "taco")
+	public Taco taco(){
+		return new Taco();
+	}
+	
 	@GetMapping
 	public String showDesignForm(Model model){
 		//test
@@ -65,9 +81,11 @@ public class TacoDesignController {
 	}
 	
 	@PostMapping
-	public String processDesign(@Valid Taco design, Errors errors){
+	public String processDesign(@Valid Taco design, Errors errors, @ModelAttribute Order order){
 		if(errors.hasErrors())
 			return "design";
+		Taco taco = tacoRepository.save(design);
+		//order.addDesign(taco);
 		return "redirect:/orders/current";
 	}
 	

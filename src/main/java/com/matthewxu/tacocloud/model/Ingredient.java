@@ -1,13 +1,18 @@
 
 package com.matthewxu.tacocloud.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Description:
  * @author Matthew Xu
  * @date Mar 29, 2021
  */
+@Entity
 public class Ingredient {
 	
+	@Id
 	private String id;
 	
 	private String name;

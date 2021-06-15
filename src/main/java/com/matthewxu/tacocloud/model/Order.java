@@ -1,19 +1,36 @@
 
 package com.matthewxu.tacocloud.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 /**
  * Description:
  * @author Matthew Xu
  * @date Apr 13, 2021
  */
+@Entity
+@Table(name = "taco_order")
 public class Order {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@Column(updatable = false)
+	@CreationTimestamp
 	private Date placedAt;
 	
 	@NotBlank(message = "Name is required.")
@@ -33,6 +50,12 @@ public class Order {
 	private String ccExpiration;
 	
 	private String ccCVV;
+	
+	@ManyToMany(targetEntity = Taco.class)
+	private List<Taco> tacos = new ArrayList<>();
+	public void addDesign(Taco design){
+		this.tacos.add(design);
+	}
 
 	public String getName() {
 		return name;
